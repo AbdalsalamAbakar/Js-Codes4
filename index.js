@@ -1,190 +1,190 @@
-//array methods
+//.push method
+let fruit = ['apple', 'banana'];
+fruit.push('orange');
+console.log(fruit); // Output: ['apple', 'banana', 'orange']
 
-//Array .push method
+//.pop method
+let vegetables = ['carrot', 'broccoli', 'spinach'];
+let lastVegetable = vegetables.pop();
+console.log(lastVegetable);
+
+//.shift method
+let animals = ['dog', 'cat', 'rabbit'];
+let firstAnimal = animals.shift();
+console.log(firstAnimal); // Output: 'dog'
+console.log(animals); // Output: ['cat', 'rabbit']
+
+//.unshift method
+let colors = ['blue', 'green'];
+colors.unshift('red');
+console.log(colors); // Output: ['red', 'blue', 'green']
+
+//.indexOf method
+let numbers = [10, 20, 30, 40, 50];
+console.log(numbers.indexOf(20));
+
+//.includes method
+let letters = ['a', 'b', 'c', 'd'];
+console.log(letters.includes('c'));
+
+//.slice method
+let months = ['January', 'February', 'March', 'April', 'May'];
+months.slice(1, 4);
+console.log(months); // Output: ['February', 'March', 'April']  
+
+//.splice method
+let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+days.splice(1, 1, "Abdalsalam", "Ali");
+console.log(days);
+
+//.concat method
+let array1 = [1, 2, 3];
+let array2 = [4, 5, 6];
+let combinedArray = array1.concat(array2);
+console.log(combinedArray); 
+
+//spread operator
+let arrayA = ['x', 'y', 'z'];
+let arrayB = ['a', 'b', 'c'];
+let mergedArray = [...arrayA, ...arrayB];
+console.log(mergedArray);
+
+//Array.isArray method
+let testArray = [1, 2, 3];
+let testObject = { key: 'value' };
+console.log(Array.isArray(testArray));
+
+//.reverse method
+let sequence = [1, 2, 3, 4, 5];
+sequence.reverse();
+console.log(sequence);
+
+//.sort method
+let unsortedArray = [3, 1, 4, 2, 5];
+unsortedArray.sort();
+console.log(unsortedArray);
+
+//.sort with compare function
+let mixedNumbers = [10, 5, 20, 15];
+mixedNumbers.sort((a, b) => a - b);
+console.log(mixedNumbers);
+
+//.toString method
+let sampleArray = [1, 2, 3, 4, 5];
+let arrayAsString = sampleArray.toString();
+console.log(arrayAsString); // Output: '1,2,3,4,5'                                                                                                                                                                                                                                                                                                                                                                         // Output: true
+
+//.join with separator
+let words = ['Hello', 'world', 'this', 'is', 'JavaScript'];
+let sentence = words.join('');
+console.log(sentence); // Output: 'Hello world this is JavaScript'
+
+//remove a specific item by value
 let fruits = ['apple', 'banana', 'orange'];
-fruits.push('grape');
-console.log(fruits); // ['apple', 'banana', 'orange', 'grape']
+let index = fruits.indexOf('banana');
+if (index !== -1) fruits.splice(index, 1);
+console.log(fruits); // ['apple', 'orange']       
 
-//Array .pop method
-let lastFruit = fruits.pop();
-console.log(lastFruit); // 'grape'
-console.log(fruits); // ['apple', 'banana', 'orange']       
+//how to add multiple elements at once?
+let numbs = [1, 2, 3];
+numbs.push(4, 5, 6);
+let newArray = numbs.concat([7, 8, 9]);
+console.log(numbs);
+console.log(newArray);
 
-//Array .shift method
-let firstFruit = fruits.shift();
-console.log(firstFruit); // 'apple'
-console.log(fruits); // ['banana', 'orange']
+//fill an array with the same value
+let filledArray = new Array(5).fill('A');
+filledArray.fill('B', 1, 4);
+console.log(filledArray);
 
-//Array .unshift method
-fruits.unshift('kiwi');
-console.log(fruits); // ['kiwi', 'banana', 'orange']    
+//find first and last position of repeated values
+let items = ['a', 'b', 'c', 'a', 'd', 'b'];
+let firstPos = items.indexOf('b');          
+let lastPos = items.lastIndexOf('b');
+console.log(firstPos);  
+console.log(lastPos);
 
-//Array .slice method
-let citrus = fruits.slice(1, 3);
-console.log(citrus); // ['banana', 'orange']
+//combine all elements into one string
+let fullName = ['Abdalsalam', 'Abakar', 'Abdalkareem', 'Bakr'];
+console.log(fullName.join(' '));
 
-//Array .splice method
-fruits.splice(1, 1, 'mango', 'peach');
-console.log(fruits); // ['kiwi', 'mango', 'peach', 'orange']
+//add 10 to each number using .map
+let Nums = [1, 2, 3, 4, 5];
+let addTen = Nums.map(n => n + 10);
+console.log(addTen);
 
-//Array .indexOf method
-let index = fruits.indexOf('peach');
-console.log(index); // 2    
+//filter ages above 18
+let ages = [12, 20, 17, 30];
+let adults = ages.filter(age => age > 18);
+console.log(adults);
 
-//Array .includes method
-let hasMango = fruits.includes('mango');
-console.log(hasMango); // true  
-let hasApple = fruits.includes('apple');
-console.log(hasApple); // false
+//sum all prices using .reduce()
+let prices = [10, 20, 30];
+let total = prices.reduce((sum, price) => sum + price, 0);
+console.log(total);
 
-//Array .forEach method
-fruits.forEach(function(fruit, index) {
-    console.log(index + ': ' + fruit);
-}); 
+//find the first value that meets the condition usin.find()
+let n = [5, 10, 15, 20];
+let meetc = n.find(n => n > 10);
+console.log(meetc);
 
-// 0: kiwi
-// 1: mango
-// 2: peach
-// 3: orange    
+//find index of first value meeting condition using .findIndex()
+let N = [5, 10, 15, 30];
+let indexn = N.findIndex(n => n > 10);
+console.log(indexn);
 
-//Array .map method
-let upperFruits = fruits.map(function(fruit) {
-    return fruit.toUpperCase();
-});     
-console.log(upperFruits); // ['KIWI', 'MANGO', 'PEACH', 'ORANGE']
+//test if all items meet a condition using .every()
+let numbers1 = [1, 2, 4, 5];
+let mCondition = numbers1.every(n => n % 2 ===0);
+console.log(mCondition);
 
-//Array .filter method  
-let longFruits = fruits.filter(function(fruit) {
-    return fruit.length > 4;
-});
-console.log(longFruits); // ['mango', 'peach', 'orange']
-//Array .reduce method
-let totalLength = fruits.reduce(function(total, fruit) {
-    return total + fruit.length;
-}, 0);  
-console.log(totalLength); // 16
+//flatten a nested array using .flat()
+let arr = [1,[2, 3],[4,[5]]];
+console.log(arr.flat(2));
 
-//Array .find method    
-let foundFruit = fruits.find(function(fruit) {
-    return fruit.startsWith('p');
-});
-console.log(foundFruit); // 'peach'
+//transform to uppercse/lowercase using .toUpperCase()/ .toLowerCase()
+let words1 = ['apple', 'banana'];
+let upper = words1.map(w => w.toUpperCase());
+console.log(upper);
 
-//Array .findIndex method
-let foundIndex = fruits.findIndex(function(fruit) {
-    return fruit.startsWith('o');
-});                 
-console.log(foundIndex); // 3
+//remove duplicated values using ...new Set()
+let Nu = [1,2,2,3,3,4];
+let unique = [...new Set(Nu)];
+console.log(unique);
 
-//Array .sort method
-fruits.sort();
-console.log(fruits); // ['kiwi', 'mango', 'orange', 'peach']    
+//copy an array without changing the original using .slice()/ [...your variable name here] 
+let arr2 =[1,3,4,6];
+let copy1 = arr2.slice();
+let copy2 = [...arr2];
+console.log(copy1);
+console.log(copy2);
 
-//Array .reverse method
-fruits.reverse();
-console.log(fruits); // ['peach', 'orange', 'mango', 'kiwi']    
+//find total and average using .reduce()
+let arr3 = [10, 20, 30];
+let total2 = arr3.reduce((sum, n) => sum + n, 0);
+let average = total2 / arr3.length;
+console.log(total2);
+console.log(average);
 
-//Array .join method
-let fruitString = fruits.join(', ');
-console.log(fruitString); // 'peach, orange, mango, kiwi'   
+//use .map() and .filter() at the same time
+let nums = [1,2,3,4,5,6];
+let result = nums.filter(n => n % 2 === 0).map(n => n * 2);
+console.log(result);
 
-//Array .concat method
-let moreFruits = ['watermelon', 'pineapple'];
-let allFruits = fruits.concat(moreFruits);
-console.log(allFruits); // ['peach', 'orange', 'mango', 'kiwi', 'watermelon', 'pineapple']  
+//check if some words exist(case insensitive)
+let words4 = ['Apple', 'Banana', 'Orange'];
+let exists = words4.some(w => w.toLowerCase() === 'banana'.toLowerCase());
+console.log(exists);
 
-//Array .flat method
-let nestedFruits = [['apple', 'banana'], ['orange', 'grape']];
-let flatFruits = nestedFruits.flat();
-console.log(flatFruits); // ['apple', 'banana', 'orange', 'grape']  
+//turn array of words into a sentence using .reduce()
+let words5 = ['Learning', 'JavaScript', 'is', 'fun'];
+let sentence2 = words5.reduce((acc, word) => acc + ' ' + word);
+console.log(sentence2);
 
-//Array .flatMap method
-let flatMappedFruits = nestedFruits.flatMap(function(group) {
-    return group.map(function(fruit) {  
-        return fruit.toUpperCase();
-    });
-});
-console.log(flatMappedFruits); // ['APPLE', 'BANANA', 'ORANGE', 'GRAPE']    
 
-//Array .fill method
-let filledArray = new Array(5).fill('fruit');
-console.log(filledArray); // ['fruit', 'fruit', 'fruit', 'fruit', 'fruit']  
 
-//Array .some method
-let hasLongFruit = fruits.some(function(fruit) {
-    return fruit.length > 5;
-}); 
-console.log(hasLongFruit); // true
 
-//Array .every method
-let allShortFruits = fruits.every(function(fruit) {
-    return fruit.length < 10;
-});
-console.log(allShortFruits); // true
-//Array .from method
-let str = 'hello';
-let charArray = Array.from(str);
-console.log(charArray); // ['h', 'e', 'l', 'l', 'o']    
-//Array .of method
-let numArray = Array.of(1, 2, 3, 4, 5);
-console.log(numArray); // [1, 2, 3, 4, 5]
 
-//Array .copyWithin method
-let numbers = [1, 2, 3, 4, 5];
-numbers.copyWithin(0, 3);
-console.log(numbers); // [4, 5, 3, 4, 5]    
-//Array .entries method
-let entries = fruits.entries();     
-for (let entry of entries) {
-    console.log(entry);
-}       
-// [0, 'peach']
-// [1, 'orange']
-// [2, 'mango']
-// [3, 'kiwi']          
-//Array .keys method
-let keys = fruits.keys();
-for (let key of keys) {
-    console.log(key);
-}                   
 
-// 0
-// 1
-// 2
-// 3                    
-//Array .values method
-let values = fruits.values();   
-for (let value of values) {
-    console.log(value);
-}       
-// 'peach'
-// 'orange'
-// 'mango'
-// 'kiwi'       
-//Array .toString method
-let fruitStr = fruits.toString();
-console.log(fruitStr); // 'peach,orange,mango,kiwi'    
 
-//Array .toLocaleString method
-let localeStr = fruits.toLocaleString();
-console.log(localeStr); // 'peach,orange,mango,kiwi'    
-//Array .length property
-console.log(fruits.length); // 4            
-//Array .at method
-console.log(fruits.at(1)); // 'orange'
-console.log(fruits.at(-1)); // 'kiwi'
 
-//Array .findLast method        
-let lastFruitStartingWithM = fruits.findLast(function(fruit) {
-    return fruit.startsWith('m');
-});
-console.log(lastFruitStartingWithM); // 'mango'     
-//Array .findLastIndex method
-let lastIndexStartingWithO = fruits.findLastIndex(function(fruit) {
-    return fruit.startsWith('o');
-});     
-console.log(lastIndexStartingWithO); // 1
-//Array .with method
-let newFruits = fruits.with(1, 'blueberry');
-console.log(newFruits); // ['peach', 'blueberry', 'mango', 'kiwi']
-console.log(fruits); // ['peach', 'orange', 'mango', 'kiwi'] (original array remains unchanged)
